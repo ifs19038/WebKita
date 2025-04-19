@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AJAR.in</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- SweetAlert2 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <img src="logo.png" alt="AJAR.in Logo" class="logo" />
+    <input type="text" id="userInput" placeholder="Enter text..." class="input-field" />
+    <button class="submit-btn" onclick="handleSubmit()">Submit</button>
+  </div>
+
+ <script>
+  function handleSubmit() {
+    const inputValue = document.getElementById("userInput").value;
+
+    if (inputValue === "10") {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Yeee, You did it",
+        showConfirmButton: false,
+        backdrop: '#149B6E',
+        timer: 1500,
+        didOpen: () => {
+          confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 }
+          });
+        }
+      });
+    } else {
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Sorry, Try Again",
+        showConfirmButton: false,
+        backdrop: 'rgba(255, 0, 0, 1)',
+        timer: 1500
+      });
+    }
+  }
+</script>
+
+</body>
+</html>
+
+
