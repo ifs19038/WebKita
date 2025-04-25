@@ -19,36 +19,40 @@
   </div>
 
  <script>
-  function handleSubmit() {
-    const inputValue = document.getElementById("userInput").value;
+function handleSubmit() {
+  const inputField = document.getElementById("userInput");
+  const inputValue = inputField.value;
 
-    if (inputValue === "1234567890") {
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Yeee, You did it",
-        showConfirmButton: false,
-        backdrop: '#149B6E',
-        timer: 1500,
-        didOpen: () => {
-          confetti({
-            particleCount: 150,
-            spread: 70,
-            origin: { y: 0.6 }
-          });
-        }
-      });
-    } else {
-      Swal.fire({
-        position: "center",
-        icon: "error",
-        title: "Sorry, Try Again",
-        showConfirmButton: false,
-        backdrop: 'rgba(255, 0, 0, 1)',
-        timer: 1500
-      });
-    }
+  if (inputValue === "1234567890") {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Yeee, You did it",
+      showConfirmButton: false,
+      backdrop: '#149B6E',
+      timer: 1500,
+      didOpen: () => {
+        confetti({
+          particleCount: 150,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+      }
+    });
+  } else {
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "Sorry, Try Again",
+      showConfirmButton: false,
+      backdrop: 'rgba(255, 0, 0, 1)',
+      timer: 1500
+    });
   }
+
+  // Kosongkan input
+  inputField.value = "";
+}
 </script>
 
 </body>
