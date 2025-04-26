@@ -43,6 +43,39 @@ body {
 .submit-btn:hover {
   background-color: #11825d;
 }
+
+.pagination {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.pagination a {
+  display: inline-block;
+  margin: 0 8px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  background-color: #149B6E;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.pagination a:hover {
+  background-color: #11825d;
+}
+
+.pagination a.active {
+  background-color: white;
+  color: #149B6E;
+  border: 2px solid #149B6E;
+}
+
+
 @media (max-width: 768px) {
   .input-field {
     width: 90%;
@@ -77,3 +110,14 @@ body {
     padding: 10px 18px;
   }
 }
+
+@media (max-width: 600px) {
+  .pagination a {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    margin: 0 5px;
+  }
+}
+
